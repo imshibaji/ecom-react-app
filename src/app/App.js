@@ -1,13 +1,24 @@
+import { Outlet } from "react-router-dom";
 import { Navbar } from '../common/Navbar';
 import './App.css';
 
-function App() {
+const menuItems = [
+        { name: "Home", path: "/" },
+        { name: "About", path: "/about" },
+        {
+            name: "Gallery", path: "/gallery", children: [
+                { name: "Gallery 1", path: "/gallery/1" },
+                { name: "Gallery 2", path: "/gallery/2" },
+            ]
+        },
+        { name: "Contact", path: "/contact" },
+    ];
+
+export default function App() {
   return (
-    <div className="App">
-      <Navbar title="My App" />
-      <h1>App</h1>
-    </div>
+      <div className="App">
+          <Navbar title="My React App" menus={menuItems} />
+          <Outlet />
+      </div>
   );
 }
-
-export default App;
