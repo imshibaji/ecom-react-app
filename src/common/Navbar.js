@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 
 export function Navbar({ title, menus }) {
-    
-
     return (
         <div className="navbar bg-base-100 md:px-20 px-5">
             <div className="navbar-start">
@@ -15,7 +13,7 @@ export function Navbar({ title, menus }) {
                             <li className="" key={menu.name}>
                                 {menu.children ? (
                                     <>
-                                        <Link to={menu.path}>{menu.name}</Link>
+                                        <Link className="hover:text-cyan-400" to={menu.path}>{menu.name}</Link>
                                         <ul className="p-2">
                                             {menu.children.map(subMenu => (
                                                 <li key={subMenu.name}><Link to={subMenu.path}>{subMenu.name}</Link></li>
@@ -32,27 +30,27 @@ export function Navbar({ title, menus }) {
                 <Link className="btn btn-ghost text-2xl text-cyan-400" to="/">{title || 'React App'}</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 text-lg hover:text-cyan-400">
+                <ul className="menu menu-horizontal px-1 text-lg">
                     {menus.map(menu => (
                         <li key={menu.name}>
                             {menu.children ? (
                                 <details>
-                                    <summary>{menu.name}</summary>
+                                    <summary className="hover:text-cyan-400">{menu.name}</summary>
                                     <ul className="p-2">
                                         {menu.children.map(subMenu => (
-                                            <li key={subMenu.name}><Link to={subMenu.path}>{subMenu.name}</Link></li>
+                                            <li key={subMenu.name}><Link className="hover:text-cyan-400 w-40" to={subMenu.path}>{subMenu.name}</Link></li>
                                         ))}
                                     </ul>
                                 </details>
                             ) : (
-                                <Link to={menu.path}>{menu.name}</Link>
+                                <Link className="hover:text-cyan-400" to={menu.path}>{menu.name}</Link>
                             )}
                         </li>
                     ))}
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="btn" to="/button">Button</Link>
+                <Link className="btn" to="/cart">Cart(0)</Link>
             </div>
         </div>
     );

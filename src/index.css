@@ -13,4 +13,20 @@
     h1{
         @apply text-4xl;
     }
+
+    .wrapper{
+        @apply max-w-7xl mx-auto px-6;
+    }
+
+    .group{
+        @apply flex flex-col items-center justify-center mt-20;
+    }
+
+    .highlight-text{
+        @apply text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-[#00CCFF] to-[#f94aff];
+    }
+
+    .pagination{
+        @apply flex flex-row gap-5 p-6 bg-slate-900 my-4;
+    }
 }

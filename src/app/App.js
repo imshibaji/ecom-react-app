@@ -5,6 +5,7 @@ import './App.css';
 const menuItems = [
         { name: "Home", path: "/" },
         { name: "About", path: "/about" },
+        { name: "Products", path: "/products" },
         {
             name: "Gallery", path: "/gallery", children: [
                 { name: "Gallery 1", path: "/gallery/1" },
