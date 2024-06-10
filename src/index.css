@@ -29,4 +29,21 @@
     .pagination{
         @apply flex flex-row gap-5 p-6 bg-slate-900 my-4;
     }
+
+    .addcart{
+        @apply text-white border border-cyan-300 bg-transparent hover:bg-gradient-to-r from-[#00CCFF] to-[#101763] rounded-md px-3 py-2
+    }
+
+    .removecart{
+        @apply text-white border border-red-600 bg-transparent hover:bg-gradient-to-r from-[#e35f5f] to-red-800 rounded-md px-3 py-2
+    }
+
+    .buynow{
+        @apply text-white border border-green-600 bg-transparent hover:bg-gradient-to-r from-[#528738] to-green-800 rounded-md px-3 py-2
+    }
+
+    .product-card{
+        @apply flex flex-col items-center justify-center p-4 bg-white bg-opacity-5 rounded-xl
+    }
+    
 }

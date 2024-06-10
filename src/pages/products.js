@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { useContext } from 'react';
+import { CartContext } from '../components/CartContext';
+
 
 const api = "https://dummyjson.com/products";
 const limitCount = 9;
@@ -12,6 +15,8 @@ export default function Products() {
     const [page, setPage] = useState(initialPage);
     const [total, setTotal] = useState(initialTotal);
     const [loaded, setLoaded] = useState(false);
+    const { addToCart } = useContext(CartContext);
+
 
     const previous = () => {
         if (page > 0) {
@@ -53,10 +58,10 @@ export default function Products() {
     return (
         <div className="page px-6">
             <div className="wrapper group">
-                <div className="highlight-text">
+                <div className="highlight-text mb-10">
                     Products Page
                 </div>
-                {productsView(products, error)}
+                {productsView(products, error, addToCart)}
                 <div className="pagination">
                     <button disabled={page === 0} onClick={() => previous()}>Previous</button>
                     <span>{page + 1} of {(total/limit).toFixed(0)}</span>
@@ -67,7 +72,7 @@ export default function Products() {
     );
 }
 
-function productsView(products, error) {
+function productsView(products, error, addToCart) {
     return (
         <>
             <div className="grid grid-cols-3 gap-4">
@@ -79,8 +84,14 @@ function productsView(products, error) {
                                     <div className="product-image">
                                         <img src={product.thumbnail} alt={product.title} />
                                     </div>
-                                    <div className="product-title">
+                                    <div className="product-title text-base font-medium text-white mt-3">
                                         {product.title}
+                                    </div>
+                                    <div className="flex items-center justify-center mt-4">
+                                        <button className="addcart"
+                                           onClick={() => addToCart(product)}>
+                                            Add to Cart
+                                        </button>
                                     </div>
                                 </div>
                             )

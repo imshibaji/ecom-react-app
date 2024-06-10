@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-
+import { CartContext } from '../components/CartContext';
+import { useContext } from 'react';
 export function Navbar({ title, menus }) {
+    const { cart } = useContext(CartContext);
     return (
         <div className="navbar bg-base-100 md:px-20 px-5">
             <div className="navbar-start">
@@ -50,7 +52,7 @@ export function Navbar({ title, menus }) {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="btn" to="/cart">Cart(0)</Link>
+                <Link className="btn" to="/cart">Cart({cart.length})</Link>
             </div>
         </div>
     );

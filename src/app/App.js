@@ -18,7 +18,7 @@ const menuItems = [
 export default function App() {
   return (
       <div className="App">
-          <Navbar title="My React App" menus={menuItems} />
+          <Navbar title="My Shopping App" menus={menuItems} />
           <Outlet />
       </div>
   );
