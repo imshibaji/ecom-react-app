@@ -45,5 +45,23 @@
     .product-card{
         @apply flex flex-col items-center justify-center p-4 bg-white bg-opacity-5 rounded-xl
     }
+
+    .display{
+        @apply flex flex-col items-center justify-center p-4 bg-white bg-opacity-5 rounded my-2;
+    }
+    .display-text{
+        @apply text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-[#00CCFF] to-[#f94aff];
+    }
+
+    .input{
+        @apply flex flex-col items-center justify-center p-4 bg-white bg-opacity-5 rounded my-2;
+    }
+    .input-text{
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00CCFF] to-[#f94aff];
+    }
+
+    .input-field{
+        @apply p-3 text-xl bg-clip-text text-transparent bg-gradient-to-r from-[#00CCFF] to-[#f94aff];
+    }
     
 }
